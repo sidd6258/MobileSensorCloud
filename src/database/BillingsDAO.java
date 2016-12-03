@@ -23,7 +23,7 @@ public class BillingsDAO {
 		List<BillingVO> ls = new ArrayList<BillingVO>();
 		try{
 				Class.forName("com.mysql.jdbc.Driver");
-				Connection con = DriverManager.getConnection("jdbc:mysql://sensorinstance.cbmdd7nbdd3k.us-west-2.rds.amazonaws.com:3306/sensordb?useSSL=false", "admin","adminadmin");
+				Connection con = DriverManager.getConnection("jdbc:mysql://sensorcloud.cm8ogkurdd27.us-west-2.rds.amazonaws.com:3306/sensorcloud?useSSL=false", "root","rootroot");
 				Statement st = con.createStatement();
 				ResultSet rs = st.executeQuery("SELECT * from sensordb.sensor_master");
 				while(rs.next()){
