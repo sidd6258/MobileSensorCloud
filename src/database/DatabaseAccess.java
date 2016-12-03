@@ -39,8 +39,8 @@ public class DatabaseAccess {
 			ResultSet rs = st.executeQuery(query);
 		
 		while(rs.next()){
-			String password1 = rs.getString("user_password");
-			int id = rs.getInt("user_id");
+			String password1 = rs.getString("password");
+			int id = rs.getInt("id");
 			String type = rs.getString("user_type");
 				a.setType(type);
 				a.setId(id);
