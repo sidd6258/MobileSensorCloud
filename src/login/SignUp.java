@@ -48,12 +48,12 @@ public class SignUp extends HttpServlet {
 		String state=request.getParameter("State");
 		String address=request.getParameter("Address");
 		Date d = new Date();
-		String query = "INSERT INTO user_details (email,password,firstname,lastname,phone,address,zipcode,city,state,user_status,user_type,creation_date,last_login_date)"
+		String query = "INSERT INTO user_master (user_email,user_password,user_fname,user_lname,phone,address,zipcode,city,state,user_status,user_type,creation_date,last_login_date)"
 									 + " VALUES ('"+userName+"','"+password+"','"+firstName+"','"+lastName+"','"+phone+"','"+address+"','"+zipcode+"','"+city+"','"+state+"','active','client','"+d.toString()+"','')";
 		DatabaseAccess db = new DatabaseAccess();
 		db.insert(query);
 		//response.sendRedirect("Login.jsp");
-		response.sendRedirect("login_new.jsp");
+		response.sendRedirect("login_new#login.jsp");
 	}
 
 }

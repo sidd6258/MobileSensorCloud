@@ -14,9 +14,9 @@ public class HubDAO {
 		List<HDVO> ls = new ArrayList<HDVO>();
 		try{
 				Class.forName("com.mysql.jdbc.Driver");
-				Connection con = DriverManager.getConnection("jdbc:mysql://sensorinstance.cbmdd7nbdd3k.us-west-2.rds.amazonaws.com:3306/sensordb?useSSL=false", "admin","adminadmin");
+				Connection con = DriverManager.getConnection("jdbc:mysql://sensorcloud.cm8ogkurdd27.us-west-2.rds.amazonaws.com:3306/sensorcloud?useSSL=false", "root","rootroot");
 				Statement st = con.createStatement();
-				ResultSet rs = st.executeQuery("SELECT * from sensordb.sensor_master where hub_id="+hub_id+"");
+				ResultSet rs = st.executeQuery("SELECT * from sensorcloud.sensor_master where hub_id="+hub_id+"");
 				while(rs.next()){
 					HDVO hdvo = new HDVO();
 					hdvo.setSensor_tag_value(rs.getString("sensor_tag_value"));

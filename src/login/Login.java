@@ -49,7 +49,7 @@ public class Login extends HttpServlet {
 		System.out.println(password);
 		HttpSession sesid = request.getSession();
 		HttpSession sest = request.getSession();
-		String query = "SELECT password,id,user_type from user_details where email='"+username+"'";
+		String query = "SELECT user_password,user_id,user_type from user_master where user_email='"+username+"'";
 		DatabaseAccess db = new DatabaseAccess();
 		Auth aut =db.auth(query,password);
 		System.out.println(aut.getId()+" "+aut.getPassword());

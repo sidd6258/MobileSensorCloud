@@ -19,7 +19,7 @@ public class StartStop {
 
 		List<String> instancesToStop = new ArrayList<String>();
 		instancesToStop.add(sensor_id);
-		AmazonEC2 amazonEC2Client = new AmazonEC2Client(new BasicAWSCredentials("AKIAJKE734M3ECBVELTQ", "hGIQ2CX60wVDrUIEXA/YQXYMMNDNdbQLqI+KWsWd"));
+		AmazonEC2 amazonEC2Client = new AmazonEC2Client(new BasicAWSCredentials("AKIAIT55AMT7GK4POXXQ", "bQe3C60EWeKRakZcZ/3CoVEXH4eMOOcH8IeIGNVJ"));
 		amazonEC2Client.setEndpoint("ec2.us-west-2.amazonaws.com");
 		
 		DescribeInstancesRequest ir=new DescribeInstancesRequest();
