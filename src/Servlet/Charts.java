@@ -44,7 +44,7 @@ public class Charts extends HttpServlet {
 		
 		
 		// also get sensor_name
-		String q = "SELECT sensor_id FROM sensordb.sensor_master where user_id="+id;
+		String q = "SELECT sensor_id FROM sensorcloud.sensor_master where user_id="+id;
 		DatabaseAccess db = new DatabaseAccess();
 		ArrayList<String> sensor_ids = db.getSensorID(q);
 		
@@ -69,7 +69,7 @@ public class Charts extends HttpServlet {
 				
 				for(int i=0;i<sensor_ids.size();i++)
 				{
-					String sensorname = "SELECT sensor_tag_value FROM sensordb.sensor_master where sensor_id='"+sensor_ids.get(i)+"'";
+					String sensorname = "SELECT sensor_tag_value FROM sensorcloud.sensor_master where sensor_id='"+sensor_ids.get(i)+"'";
 					String name = db.getSensorNames(sensorname);
 					sensor_names.add(name);
 					
@@ -118,7 +118,7 @@ public class Charts extends HttpServlet {
 		for(int i=0; i<sensor_ids.size(); i++)
 		{
 			// add where sensor id == this
-			String query = "SELECT time_stamp, AVG(temp) as avgtemp FROM sensordb.temp_data where sensor_id='"+sensor_ids.get(i)+"' group by CAST(time_stamp AS date) order by time_stamp DESC limit 15";
+			String query = "SELECT time_stamp, AVG(temp) as avgtemp FROM sensorcloud.temp_data where sensor_id='"+sensor_ids.get(i)+"' group by CAST(time_stamp AS date) order by time_stamp DESC limit 15";
 			
 			ResultSet rs = db.getAvgTemp(query);
 			data_sensor = new ArrayList<Double>();

@@ -16,13 +16,13 @@ public class UserDAO{
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection con = DriverManager.getConnection("jdbc:mysql://sensorcloud.cm8ogkurdd27.us-west-2.rds.amazonaws.com:3306/sensorcloud?useSSL=false", "root","rootroot");
 				Statement st = con.createStatement();
-				ResultSet rs = st.executeQuery("SELECT s.sensor_id,t.temp,sensor_tag_value,s.sensor_status,max(t.time_stamp) creation_time FROM sensorcloud.humidity_data t join sensorcloud.sensor_master s on (s.sensor_id=t.sensor_id) where t.user_id="+i+" group by t.sensor_id");
+				ResultSet rs = st.executeQuery("SELECT s.sensor_id,t.humidity,sensor_tag_value,s.sensor_status,max(t.time_stamp) creation_time FROM sensorcloud.humidity_data t join sensorcloud.sensor_master s on (s.sensor_id=t.sensor_id) where t.user_id="+i+" group by t.sensor_id");
 				while(rs.next()){
 					UDVO udvo = new UDVO();
 					udvo.setSensor_id(rs.getString("sensor_id"));
 					System.out.println(rs.getString("sensor_id"));
-					udvo.setTemp(rs.getInt("temp"));
-					System.out.println(rs.getInt("temp"));
+					udvo.setTemp(rs.getInt("humidity"));
+					System.out.println(rs.getInt("humidity"));
 					udvo.setSensor_tag_value(rs.getString("sensor_tag_value"));
 					System.out.println(rs.getString("sensor_tag_value"));
 					udvo.setSensor_status(rs.getString("sensor_status"));

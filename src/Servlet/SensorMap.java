@@ -38,7 +38,7 @@ public class SensorMap extends HttpServlet {
 		
 		int user_id = (int) ses.getAttribute("user");
 		
-		String query = "SELECT latitude,longitude,sensor_tag_value FROM sensordb.sensor_master where user_id = '"+String.valueOf(user_id)+"'";
+		String query = "SELECT latitude,longitude,sensor_tag_value FROM sensorcloud.sensor_master where user_id = '"+String.valueOf(user_id)+"'";
 		DatabaseAccess db = new DatabaseAccess();
 		HashMap<String, Object> multivalue = db.getSensorLatLongName(query);
 	

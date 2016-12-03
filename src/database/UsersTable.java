@@ -18,7 +18,7 @@ public class UsersTable {
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection con = DriverManager.getConnection("jdbc:mysql://sensorcloud.cm8ogkurdd27.us-west-2.rds.amazonaws.com:3306/sensorcloud?useSSL=false", "root","rootroot");
 				Statement st = con.createStatement();
-				ResultSet rs = st.executeQuery("SELECT u.user_id,count(s.sensor_id) as NUMBER_SENSORS,u.user_email,u.user_fname,u.user_lname,u.user_status FROM sensordb.user_master u join sensordb.sensor_master s on (s.user_id=u.user_id) group by user_id;");
+				ResultSet rs = st.executeQuery("SELECT u.user_id,count(s.sensor_id) as NUMBER_SENSORS,u.user_email,u.user_fname,u.user_lname,u.user_status FROM sensorcloud.user_master u join sensorcloud.sensor_master s on (s.user_id=u.user_id) group by user_id;");
 				while(rs.next()){
 					UsersTableVO vo = new UsersTableVO();
 					

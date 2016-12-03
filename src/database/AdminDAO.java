@@ -16,7 +16,7 @@ public class AdminDAO {
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection con = DriverManager.getConnection("jdbc:mysql://sensorcloud.cm8ogkurdd27.us-west-2.rds.amazonaws.com:3306/sensorcloud?useSSL=false", "root","rootroot");
 				Statement st = con.createStatement();
-				ResultSet rs = st.executeQuery("SELECT * from sensordb.hub_master");
+				ResultSet rs = st.executeQuery("SELECT * from sensorcloud.hub_master");
 				while(rs.next()){
 					ADVO advo = new ADVO();
 					advo.setHub_id(rs.getInt("hub_id"));
