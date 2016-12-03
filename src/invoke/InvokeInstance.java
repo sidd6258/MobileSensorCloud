@@ -39,11 +39,11 @@ public class InvokeInstance {
 		RunInstancesRequest runInstancesRequest = new RunInstancesRequest();
 	        	
 
-		runInstancesRequest.withImageId("ami-2d966a4d")
+		runInstancesRequest.withImageId("ami-a9d276c9")
                    .withInstanceType("t2.micro")
                    .withMinCount(1)
                    .withMaxCount(1)
-                   .withKeyName("KEYSENSOR")
+                   .withKeyName("sensor")
                    
                    //.withKeyName("Hello_281")
                    .withSecurityGroups("default");
