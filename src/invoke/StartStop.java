@@ -56,7 +56,7 @@ public class StartStop {
 				Thread.sleep(5000);
 			}
 			
-			String query = "UPDATE `sensordb`.`sensor_master` SET `sensor_status`='Stopped' WHERE `sensor_id`='"+sensor_id+"';";
+			String query = "UPDATE `sensorcloud`.`sensor_master` SET `sensor_status`='Stopped' WHERE `sensor_id`='"+sensor_id+"';";
 			
 			DatabaseAccess db = new DatabaseAccess();
 			db.insert(query);

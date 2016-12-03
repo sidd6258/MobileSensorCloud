@@ -53,7 +53,7 @@ public class userCPuUtilization extends HttpServlet {
 		HttpSession ses = request.getSession();
 		int user_id = (int) ses.getAttribute("user");
 		
-		String query = "SELECT sensor_id FROM sensordb.sensor_master where user_id ="+user_id;
+		String query = "SELECT sensor_id FROM sensorcloud.sensor_master where user_id ="+user_id;
 		DatabaseAccess db = new DatabaseAccess();
 		ArrayList<String> sensor_ids = db.getSensorID(query);
 		ArrayList<String> dates = new ArrayList<String>();
@@ -76,7 +76,7 @@ public class userCPuUtilization extends HttpServlet {
 				
 				for(int i=0;i<sensor_ids.size();i++)
 				{
-					String sensorname = "SELECT sensor_tag_value FROM sensordb.sensor_master where sensor_id='"+sensor_ids.get(i)+"'";
+					String sensorname = "SELECT sensor_tag_value FROM sensorcloud.sensor_master where sensor_id='"+sensor_ids.get(i)+"'";
 					String name = db.getSensorNames(sensorname);
 					sensor_names.add(name);
 					
@@ -131,7 +131,7 @@ private ArrayList<ArrayList<Double>> getUtilizationData(ArrayList<String> sensor
 		for(int i=0; i<sensor_ids.size(); i++)
 		{
 			// add where sensor id == this
-			String query = "SELECT date, AVG(cpu_data) as avgutil FROM sensordb.utilization where sensor_id='"+sensor_ids.get(i)+"' group by CAST(date AS date) order by date DESC limit 10";
+			String query = "SELECT date, AVG(cpu_data) as avgutil FROM sensorcloud.utilization where sensor_id='"+sensor_ids.get(i)+"' group by CAST(date AS date) order by date DESC limit 10";
 			
 			ResultSet rs = db.getAvgTemp(query);
 			data_sensor = new ArrayList<Double>();

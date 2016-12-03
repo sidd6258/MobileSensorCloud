@@ -155,11 +155,11 @@ while(true){
 		DatabaseAccess db = new DatabaseAccess();
 		db.insert(query);
 		
-		String qq1 = "SELECT no_of_server FROM sensordb.hub_master where hub_id="+hub;
+		String qq1 = "SELECT no_of_server FROM sensorcloud.hub_master where hub_id="+hub;
 		int no_of_server = db.getNoodfSensor(qq1);
 		no_of_server++;
 		
-		String qu = "UPDATE `sensordb`.`hub_master` SET `no_of_server`='"+no_of_server+"' WHERE `hub_id`="+hub;
+		String qu = "UPDATE `sensorcloud`.`hub_master` SET `no_of_server`='"+no_of_server+"' WHERE `hub_id`="+hub;
 		db.insert(qu);
 		
 	}
@@ -170,16 +170,16 @@ while(true){
 	public int assignHub()
 	{
 		int new_hub_id;
-		String q = "SELECT  hub_id from sensordb.hub_master where no_of_server<3";
+		String q = "SELECT  hub_id from sensorcloud.hub_master where no_of_server<3";
 		
 		DatabaseAccess db =new DatabaseAccess();
 		int check_hub_id = db.getHubId(q);
 		
 		if(check_hub_id==0)
 		{
-			String query = "INSERT INTO `sensordb`.`hub_master` (`no_of_server`, `hub_status`) VALUES ('0', 'Running');";
+			String query = "INSERT INTO `sensorcloud`.`hub_master` (`no_of_server`, `hub_status`) VALUES ('0', 'Running');";
 			db.insert(query);
-			String q1= "SELECT hub_id FROM sensordb.hub_master";
+			String q1= "SELECT hub_id FROM sensorcloud.hub_master";
 			 new_hub_id=db.getHubId(q1);
 			
 		

@@ -80,7 +80,7 @@ public class StopStart {
 				
 				
 				
-				String query = "UPDATE `sensordb`.`sensor_master` SET `sensor_status`='Running' WHERE `sensor_id`='"+sensor_id+"';";
+				String query = "UPDATE `sensorcloud`.`sensor_master` SET `sensor_status`='Running' WHERE `sensor_id`='"+sensor_id+"';";
 				
 				DatabaseAccess db1 = new DatabaseAccess();
 				db1.insert(query);

@@ -25,7 +25,7 @@ public class BillingsDAO {
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection con = DriverManager.getConnection("jdbc:mysql://sensorcloud.cm8ogkurdd27.us-west-2.rds.amazonaws.com:3306/sensorcloud?useSSL=false", "root","rootroot");
 				Statement st = con.createStatement();
-				ResultSet rs = st.executeQuery("SELECT * from sensordb.sensor_master");
+				ResultSet rs = st.executeQuery("SELECT * from sensorcloud.sensor_master");
 				while(rs.next()){
 					BillingVO bvo = new BillingVO();
 					bvo.setSensor_id(rs.getString("sensor_tag_value"));
