@@ -15,7 +15,7 @@
     
   </head>
 
-  <body background="images/humidity.jpg">
+  <body background="images/background_image.jpg">
 
     <div class="form">
       

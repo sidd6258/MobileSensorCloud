@@ -23,11 +23,6 @@ public class RemoteCall {
 
 
 		
-		
-		
-		
-		
-
 		JSch jsch=new JSch();
 		
 		//change after deploying to ec2

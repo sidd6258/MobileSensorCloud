@@ -108,7 +108,7 @@ function createsensor()
 
 
 
-<body background="images/humidity.jpg">
+<body background="images/background_image.jpg">
 
     <div id="wrapper" style="opacity: 0.8; background-color: black;">
 

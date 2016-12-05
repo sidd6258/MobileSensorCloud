@@ -29,7 +29,7 @@ public class InvokeInstance {
 		
 		
 	
-		AmazonEC2 amazonEC2Client = new AmazonEC2Client(new BasicAWSCredentials("AKIAIT55AMT7GK4POXXQ", "bQe3C60EWeKRakZcZ/3CoVEXH4eMOOcH8IeIGNVJ"));
+		AmazonEC2 amazonEC2Client = new AmazonEC2Client(new BasicAWSCredentials("AKIAIJHJNQUEYNCX5X6A", "Z8IkgB6VDgG8eV+lRwfnNoe6Cx3VGr7+ew1Sd+jV"));
 
 //new AmazonEC2Client(new BasicAWSCredentials("AKIAI32NAJBWBXFWKXPQ", "fbQTu9ERdPKdkKFycmnDIgMpQ2ziphaiFIHjXUw6"));
 
