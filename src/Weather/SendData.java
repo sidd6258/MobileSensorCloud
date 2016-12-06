@@ -56,7 +56,7 @@ public class SendData {
 				ObjectMapper mapper = new ObjectMapper();
 				WeatherData wd = null;
 				wd = mapper.readValue(buffer.toString(), WeatherData.class);
-				String temp= wd.getMain().getTemp();
+				String temp= wd.getMain().getHumidity();
 				System.out.println("Temp  "+ temp);
 
 				TimeZone.setDefault(TimeZone.getTimeZone("PST"));

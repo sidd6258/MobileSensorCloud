@@ -430,8 +430,8 @@
                                 </div>
                                 -->
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">${row.temp}C</div>
-                                    <div>Temperature</div>
+                                    <div class="huge">${row.temp}%</div>
+                                    <div>Humidity</div>
                                 </div>
                             </div>
                         </div>
