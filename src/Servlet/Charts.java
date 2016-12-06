@@ -118,7 +118,11 @@ public class Charts extends HttpServlet {
 		for(int i=0; i<sensor_ids.size(); i++)
 		{
 			// add where sensor id == this
+<<<<<<< HEAD
 			String query = "SELECT time_stamp, AVG(humidity) as avgtemp FROM sensorcloud.humidity_data where sensor_id='"+sensor_ids.get(i)+"' group by CAST(time_stamp AS date) order by time_stamp DESC limit 15";
+=======
+			String query = "SELECT time_stamp, AVG(temp) as avgtemp FROM sensorcloud.humidity_data where sensor_id='"+sensor_ids.get(i)+"' group by CAST(time_stamp AS date) order by time_stamp DESC limit 15";
+>>>>>>> sensorinstance
 			
 			ResultSet rs = db.getAvgTemp(query);
 			data_sensor = new ArrayList<Double>();

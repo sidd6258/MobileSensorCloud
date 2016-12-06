@@ -8,21 +8,29 @@ import java.io.InputStreamReader;
 import java.security.Security;
 import java.util.concurrent.TimeUnit;
 
-import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 
 
+
 public class RemoteCall {
 
 	@SuppressWarnings("static-access")
-	public void runScript(String ipaddress, String user_id, String sensor_id, String lat,String lon) throws IOException, JSchException, InterruptedException {
+	public void runScript(String ipaddress, String user_id, String sensor_id, String lat,String lon) throws IOException, InterruptedException, Exception {
 		// TODO Auto-generated method stub
 
 
 		
+<<<<<<< HEAD
+=======
+		
+		System.out.println("ip is"+ipaddress);
+		
+		
+
+>>>>>>> sensorinstance
 		JSch jsch=new JSch();
 		
 		//change after deploying to ec2
@@ -31,35 +39,45 @@ public class RemoteCall {
 		
 		*/
 		File file = new File(".");
-		currentDirectory = file.getAbsolutePath()+"\\WebContent\\KEYSENSOR.pem";
+		currentDirectory = file.getAbsolutePath()+"\\WebContent\\sensor.pem";
 		
 		//jsch.addIdentity(currentDirectory);
-		//jsch.addIdentity("C:\\Users\\divya\\JAVAProject\\SensorCloud\\KEYSENSOR.pem");
-		jsch.addIdentity("/usr/share/tomcat8/webapps/ROOT/KEYSENSOR.pem");
+		jsch.addIdentity("C:\\Users\\starlord\\workspaces\\MobileSensorCloud\\WebContent\\sensor.pem");
+//		jsch.addIdentity("/usr/share/tomcat8/webapps/ROOT/KEYSENSOR.pem");
 		jsch.setConfig("StrictHostKeyChecking", "no");
-
 		//enter your own EC2 instance IP here
-		Session session=jsch.getSession("ubuntu",ipaddress, 22);
+		Session session=jsch.getSession("ubuntu",ipaddress,22);
+		
+		
+
+	//	session.setPassword("abc");
 		
 		int a=0;
 		
 	while(a<=10)
 	{	
 		try{
-			Thread.sleep(6000);
+			Thread.sleep(60000);
+			System.out.println("before session.connect");
+			
 			session.connect();
+			System.out.println("after session.connect");
 			ChannelExec channel = (ChannelExec) session.openChannel("exec");
 	//		BufferedReader in11=new BufferedReader(new InputStreamReader(channel.getInputStream()));
+			System.out.println("After exec");
 			channel.setCommand("./sensor.sh "+user_id+" "+sensor_id+" "+lat+" "+lon+" &");
+			System.out.println("after channel.setcommand");
 			channel.setErrStream(System.err);
 			channel.connect();
 			channel.disconnect();
 			System.out.println("connected");
 			a=11;
 		}
-		catch(JSchException e){
+		catch(Exception e){
 			a++;
-			System.out.println("Reconnecting");
+			//System.out.println("Reconnecting");
+			e.printStackTrace();
+			
 			
 		} 
 
