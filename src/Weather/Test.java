@@ -15,7 +15,7 @@ public class Test {
 		while(true){
 			
 //	sd.getdata(args[0],args[1],args[2],args[3],args[4]);
-	//	sd.getdata("11","i-09588206345c873cd","37.37","-121.83");
+		sd.getdata(11,"i-09588206345c873cd","37.37","-121.83");
 		
 	//	File f =new File("../WebContent");
 		

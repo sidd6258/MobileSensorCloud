@@ -37,11 +37,9 @@ public class InvokeInstance {
 		
 
 	
-<<<<<<< HEAD
+
 		AmazonEC2 amazonEC2Client = new AmazonEC2Client(new BasicAWSCredentials("AKIAIJHJNQUEYNCX5X6A", "Z8IkgB6VDgG8eV+lRwfnNoe6Cx3VGr7+ew1Sd+jV"));
-=======
-		AmazonEC2 amazonEC2Client = new AmazonEC2Client(new BasicAWSCredentials("edithere", "edithere"));
->>>>>>> sensorinstance
+
 
 //new AmazonEC2Client(new BasicAWSCredentials("AKIAI32NAJBWBXFWKXPQ", "fbQTu9ERdPKdkKFycmnDIgMpQ2ziphaiFIHjXUw6"));
 

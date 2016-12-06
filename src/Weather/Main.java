@@ -14,8 +14,18 @@ public class Main
     private String temp_min;
 
     private String temp;
+    
+    private String wind;
 
-    public String getHumidity ()
+    public String getWind() {
+		return wind;
+	}
+
+	public void setWind(String wind) {
+		this.wind = wind;
+	}
+
+	public String getHumidity ()
     {
         return humidity;
     }

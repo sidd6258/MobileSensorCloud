@@ -324,7 +324,7 @@
 
             <!-- /.row -->
            <div class="row">
-           <table class="table table-striped table-bordered table-hover">
+           <table class="table table-bordered table-hover" style="color: antiquewhite;">
            	<thead>
            		<tr>
            		<td>Sensor Name</td>

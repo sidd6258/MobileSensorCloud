@@ -56,8 +56,15 @@ public class SendData {
 				ObjectMapper mapper = new ObjectMapper();
 				WeatherData wd = null;
 				wd = mapper.readValue(buffer.toString(), WeatherData.class);
-				String temp= wd.getMain().getHumidity();
-				System.out.println("Temp  "+ temp);
+				String humidity= wd.getMain().getHumidity();
+				String temp= wd.getMain().getTemp();
+				String wind=wd.getWind().getSpeed();
+				String pressure=wd.getMain().getPressure();
+
+				System.out.println("Humidity  "+ humidity);
+				System.out.println("Temp   "+ temp);
+				System.out.println("Wind Speed "+ wind);
+				System.out.println("Pressure  "+ pressure);
 
 				TimeZone.setDefault(TimeZone.getTimeZone("PST"));
 				java.util.Date utilDate = new java.util.Date();
@@ -66,7 +73,7 @@ public class SendData {
 				System.out.println("timestamp  "+sq);
 				String sq1=sq.toString();
 				
-				String query = "insert into humidity_data values('"+sensor_id+"','"+user_id+"','"+temp+"','"+sq1+"' )";
+				String query = "insert into humidity_data values('"+sensor_id+"','"+user_id+"','"+humidity+"','"+temp+"','"+wind+"','"+pressure+"','"+sq1+"' )";
 				DatabaseAccess db = new DatabaseAccess();
 				db.insert(query);
 			

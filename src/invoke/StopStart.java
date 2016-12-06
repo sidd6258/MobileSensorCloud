@@ -1,6 +1,8 @@
 package invoke;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +15,7 @@ import com.amazonaws.services.ec2.model.StartInstancesRequest;
 import com.amazonaws.services.ec2.model.StopInstancesRequest;
 import com.jcraft.jsch.JSchException;
 
+import Weather.SendData;
 import database.DatabaseAccess;
 
 public class StopStart {
@@ -23,7 +26,7 @@ public class StopStart {
 		
 		List<String> instancesToStop = new ArrayList<String>();
 		instancesToStop.add(sensor_id);
-		AmazonEC2 amazonEC2Client = new AmazonEC2Client(new BasicAWSCredentials("AKIAIT55AMT7GK4POXXQ", "bQe3C60EWeKRakZcZ/3CoVEXH4eMOOcH8IeIGNVJ"));
+		AmazonEC2 amazonEC2Client = new AmazonEC2Client(new BasicAWSCredentials("AKIAIJHJNQUEYNCX5X6A", "Z8IkgB6VDgG8eV+lRwfnNoe6Cx3VGr7+ew1Sd+jV"));
 		amazonEC2Client.setEndpoint("ec2.us-west-2.amazonaws.com");
 		 
 		DescribeInstancesRequest ir=new DescribeInstancesRequest();
@@ -67,26 +70,38 @@ public class StopStart {
 				DatabaseAccess db = new DatabaseAccess();
 				ArrayList<String> latlon = db.getlLatLong(user_id, sensor_id, query1);
 				
-				
-				
-				RemoteCall rc = new RemoteCall();
-				try {
-					//Thread.sleep(7000);
-					rc.runScript(publicip, user_id, sensor_id, latlon.get(0), latlon.get(1));
-				} catch (IOException | JSchException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-				
-				
 				String query = "UPDATE `sensorcloud`.`sensor_master` SET `sensor_status`='Running' WHERE `sensor_id`='"+sensor_id+"';";
 				
 				DatabaseAccess db1 = new DatabaseAccess();
 				db1.insert(query);
+				
+				SendData sd = new SendData();
+				while(true){
+						try {
+							//i.createSensor(user_id, sensor_name, lat, lon);
+								try {
+									sd.getdata(Integer.parseInt(user_id), sensor_id, latlon.get(0), latlon.get(1));
+								} catch (ParseException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								Thread.sleep(600000);
+								System.out.println("added");
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							} catch (MalformedURLException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+						} //catch (ParseException e) {
+								// TODO Auto-generated catch block
+							//	e.printStackTrace();
+					//}
+						}
+				
+				
+				
+
 				
 				
 		}

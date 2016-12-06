@@ -21,16 +21,6 @@ public class RemoteCall {
 	public void runScript(String ipaddress, String user_id, String sensor_id, String lat,String lon) throws IOException, InterruptedException, Exception {
 		// TODO Auto-generated method stub
 
-
-		
-<<<<<<< HEAD
-=======
-		
-		System.out.println("ip is"+ipaddress);
-		
-		
-
->>>>>>> sensorinstance
 		JSch jsch=new JSch();
 		
 		//change after deploying to ec2

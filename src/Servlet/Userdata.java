@@ -50,7 +50,10 @@ public class Userdata extends HttpServlet {
 			System.out.println(v.getSensor_id());
 			System.out.println(v.getSensor_tag_value());
 			System.out.println(v.getSensor_status());
+			System.out.println(v.getHumidity());
 			System.out.println(v.getTemp());
+			System.out.println(v.getPressure());
+			System.out.println(v.getWindSpeed());
 		}
 		
 		ses.setAttribute("sensor", ls);
