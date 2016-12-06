@@ -45,11 +45,12 @@ public class CreateSensor extends HttpServlet {
 	   System.out.println("tag value"+sensor_name);
 	   
 //	   String filePath = getServletContext().getRealPath("\\WebContent\\KEYSENSOR.pem");
-	   InvokeInstance invok = new InvokeInstance();
+	 //  InvokeInstance invok = new InvokeInstance();
 	   TempClass temp= new TempClass();
 	   try {
 		   
-		   temp.createinstance(String.valueOf(user_id), sensor_name, lat, lon);
+		   //temp.createinstance(String.valueOf(user_id), sensor_name, lat, lon);
+		   temp.createinstance(user_id, sensor_name, lat, lon);
 		   //invok.createSensor(String.valueOf(user_id), sensor_name, lat, lon);
 	   } catch (InterruptedException e) {
 		// TODO Auto-generated catch block
