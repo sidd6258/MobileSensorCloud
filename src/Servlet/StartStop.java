@@ -37,9 +37,9 @@ public class StartStop extends HttpServlet {
 	//	response.getWriter().append("Served at: ").append(request.getContextPath());
 
 		HttpSession ses = request.getSession();
-		String sensor_id = request.getParameter("sensor_id");
+		final String sensor_id = request.getParameter("sensor_id");
 		String action = request.getParameter("action");
-		int user_id = (int) ses.getAttribute("user");
+		final int user_id = (int) ses.getAttribute("user");
 		
 		
 		if(action.equals("start"))

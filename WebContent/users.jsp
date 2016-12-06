@@ -41,7 +41,7 @@
 
 </head>
 
-<body background="https://www.colourbox.com/preview/2347548-weather-icons-doodles-hand-drawn-set-on-white.jpg">
+<body background="images/background_image.jpg">
 
     <div id="wrapper">
 
@@ -311,110 +311,7 @@
             </div>
             
             <!-- /.row -->
- <!-- <t:forEach items="${sessionScope.sensor}"  var="row">            
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <div class="row">
-                              <!--   <div class="col-xs-3">
-                                    <i class="fa fa-comments fa-5x"></i>
-                                </div> 
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">${row.sensor_tag_value }</div>
-                                    <div>Sensor Name</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-green">
-                        <div class="panel-heading">
-                            <div class="row">
-                            <!--  
-                                <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-5x"></i>
-                                </div>
-                                
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">${row.temp}</div>
-                                    <div>Temperature</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <div class="row">
-                            <!--      <div class="col-xs-3">
-                                    <i class="fa fa-shopping-cart fa-5x"></i>
-                                </div>
-                                
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">${row.sensor_status}</div>
-                                    <div>Health</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            <div class="row">
-                            <!--  
-                                <div class="col-xs-3">
-                                    <i class="fa fa-support fa-5x"></i>
-                                </div>
-                                
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">
-                                    <a href="start?${row.sensor_id}"><button type="button" class="btn btn-primary btn-circle btn-lg">Start</button></a>
-                             		 <a href="stop?${row.sensor_id}"><button type="button" class="btn btn-success btn-circle btn-lg">Stop</button></a>
-                                   	</div>
-                                    <div>
-                                		Manage
-                               		</div>
-                                </div>
-                            </div>
-                       </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-					   </div>                     
-                    
-                </div>
-            </div>
-            
-</t:forEach>   -->         
+ 
 
             <!-- /.row -->
            <div class="row">

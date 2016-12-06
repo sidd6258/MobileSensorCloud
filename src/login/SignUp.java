@@ -53,7 +53,7 @@ public class SignUp extends HttpServlet {
 		DatabaseAccess db = new DatabaseAccess();
 		db.insert(query);
 		//response.sendRedirect("Login.jsp");
-		response.sendRedirect("login_new#login.jsp");
+		response.sendRedirect("userDashBoard.jsp");
 	}
 
 }

@@ -43,7 +43,7 @@
 
 </head>
 
-<body background="https://www.colourbox.com/preview/2347548-weather-icons-doodles-hand-drawn-set-on-white.jpg">
+<body background="images/background_image.jpg">
 
 
 <% 

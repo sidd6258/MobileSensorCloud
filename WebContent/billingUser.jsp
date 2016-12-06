@@ -42,7 +42,7 @@
 
 </head>
 
-<body background="images/humidity.jpg">
+<body background="images/background_image.jpg">
 
     <div id="wrapper" style="opacity: 0.8; background-color: black;">
 
@@ -324,7 +324,7 @@
 
             <!-- /.row -->
            <div class="row">
-           <table class="table table-striped table-bordered table-hover">
+           <table class="table table-bordered table-hover" style="color: antiquewhite;">
            	<thead>
            		<tr>
            		<td>Sensor Name</td>

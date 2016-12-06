@@ -36,7 +36,7 @@
 
 </head>
 
-<body background="images/humidity.jpg">
+<body background="images/background_image.jpg">
 	<% 
 								
 								double[] data1 = {7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 

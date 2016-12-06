@@ -41,7 +41,7 @@
 
 </head>
 
-<body background="images/humidity.jpg">
+<body background="images/background_image.jpg">
 
     <div id="wrapper" style="opacity: 0.8; background-color: black;">
 
@@ -429,9 +429,21 @@
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 -->
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">${row.temp}C</div>
+                                <div class="col-xs-6">
+                                    <div>${row.temp}%</div>
+                                    <div>Humidity</div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div>${row.humidity} &deg;C</div>
                                     <div>Temperature</div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div>${row.pressure} mb</div>
+                                    <div>Pressure</div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div>${row.windSpeed} mph</div>
+                                    <div>WindSpeed</div>
                                 </div>
                             </div>
                         </div>
@@ -492,6 +504,7 @@
                                    	
                                    	
                                    	</div>
+                                   	<br>
                                     <div>
                                 		Manage
                                		</div>
